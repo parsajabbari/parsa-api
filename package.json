@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "foo": ""
+    "foo": "foobar"
   },
   "dependencies": {
     "serverless": "3.31.0"
