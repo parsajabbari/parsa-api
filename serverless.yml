@@ -3,6 +3,7 @@ frameworkVersion: "3"
 
 provider:
   name: aws
+  architecture: arm64
   runtime: nodejs18.x
 
 functions:
