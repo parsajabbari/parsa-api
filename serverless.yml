@@ -6,6 +6,9 @@ provider:
   architecture: arm64
   runtime: nodejs18.x
 
+plugins:
+  - serverless-offline
+
 functions:
   function1:
     handler: index.handler
