@@ -1,9 +1,7 @@
 {
   "scripts": {
-    "preinstall": "source ~/.zshrc",
-    "prestart": "npm install",
     "start": "echo 'woohoo'",
-    "zsh": "zsh -c"
+    "zsh": "zsh -ic"
   },
   "devDependencies": {
     "prettier": "2.8.8",
