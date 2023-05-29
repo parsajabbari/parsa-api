@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "preinstall": "npm run zsh 'nvm use'",
     "start": "echo 'woohoo'",
     "zsh": "zsh -ic"
   },
