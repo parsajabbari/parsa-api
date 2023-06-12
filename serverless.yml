@@ -1,9 +1,11 @@
 service: parsa-api
 frameworkVersion: "3.32.2"
+configValidationMode: error
 
 provider:
   name: aws
   architecture: arm64
+  memorySize: 128
   runtime: nodejs18.x
   stage: local
 
@@ -17,8 +19,26 @@ functions:
       - httpApi:
           path: /
           method: get
+      - schedule:
+          rate: rate(1 minute)
+          inputTransformer: # doesn't work on serverless offline, just gets ignored and you get the stock event instead
+            inputPathsMap:
+              event: "$"
+            inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
 
 custom:
   serverless-offline:
     lambdaPort: 3002
     httpPort: 3003
+# research stack drift... how do i turn serverless.yml into a state function?
+# every time i deploy, auto delete any resource that is not part of the stack
+# in this file? i.e. if i delete a function from here, it should auto delete
+# it from the cloud
+
+# AWS default is not necessarily same as serverless default! so you can't just look
+# at what AWS says and just assume that if i don't mess with it, that's what i will
+# get... in fact, difference can be huge... default lambda is 128 MB ram, but
+# serverless does 1GB if you don't specify! you have to effectively treat
+# serverless as a totally different thing from AWS... that has its own sensibilities,
+# rather than just a convenient way of writing AWS stack, that is unopioninated
+# https://github.com/serverless/serverless/issues/11529
