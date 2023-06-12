@@ -42,3 +42,6 @@ custom:
 # serverless as a totally different thing from AWS... that has its own sensibilities,
 # rather than just a convenient way of writing AWS stack, that is unopioninated
 # https://github.com/serverless/serverless/issues/11529
+
+# could've sworn that karmacheck repo isn't using nodemon but it will auto
+# build anytime i make a change, so what's going on? maybe don't need nodemon

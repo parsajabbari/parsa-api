@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "start": "serverless offline",
+    "start": "nodemon --ext '*' --exec 'serverless offline'",
     "zsh": "zsh -ic"
   },
   "devDependencies": {
+    "nodemon": "2.0.22",
     "prettier": "2.8.8",
     "prettier-plugin-packagejson": "2.4.3",
     "serverless": "3.32.2",
