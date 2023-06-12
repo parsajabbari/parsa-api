@@ -5,6 +5,7 @@ provider:
   name: aws
   architecture: arm64
   runtime: nodejs18.x
+  stage: local
 
 plugins:
   - serverless-offline
@@ -12,3 +13,12 @@ plugins:
 functions:
   function1:
     handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+custom:
+  serverless-offline:
+    lambdaPort: 3002
+    httpPort: 3003

@@ -1,13 +1,6 @@
 module.exports.handler = async (event) => {
+  console.log("event", event);
   return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: `${process.version}`,
-        input: event,
-      },
-      null,
-      2
-    ),
+    nodeVersion: process.version,
   };
 };

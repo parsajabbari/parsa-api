@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "echo 'woohoo'",
+    "start": "serverless offline",
     "zsh": "zsh -ic"
   },
   "devDependencies": {
@@ -10,6 +10,6 @@
     "serverless-offline": "12.0.4"
   },
   "engines": {
-    "node": "v18.16.0"
+    "node": "18.16.0"
   }
 }
