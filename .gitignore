@@ -131,3 +131,6 @@ dist
 
 # operating system files
 .DS_Store
+
+# TypeScript build output
+.build
