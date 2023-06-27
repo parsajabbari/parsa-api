@@ -45,3 +45,7 @@ custom:
 
 # could've sworn that karmacheck repo isn't using nodemon but it will auto
 # build anytime i make a change, so what's going on? maybe don't need nodemon
+
+# figure out whether specifying engines in package with a specific version of node causes
+# aws to use the same version or not? will it just error out during build?
+# if it works anyway but diffrent version logged out, rpoves that aws just ignores it
