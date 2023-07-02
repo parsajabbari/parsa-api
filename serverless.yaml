@@ -19,16 +19,16 @@ plugins:
 functions:
   function1:
     handler: index.handler
-    # events:
-    #   - httpApi:
-    #       path: /
-    #       method: get
-    # - schedule:
-    #     rate: rate(1 minute)
-    #     inputTransformer: # doesn't work on serverless offline, just gets ignored and you get the stock event instead
-    #       inputPathsMap:
-    #         event: "$"
-    #       inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
+    events:
+      - httpApi:
+          path: /
+          method: get
+      - schedule:
+          rate: rate(1 minute)
+          inputTransformer: # doesn't work on serverless offline, just gets ignored and you get the stock event instead
+            inputPathsMap:
+              event: "$"
+            inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
   function2:
     handler: foo.handler
 
