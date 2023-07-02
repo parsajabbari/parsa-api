@@ -53,4 +53,8 @@ custom:
 # if it works anyway but diffrent version logged out, rpoves that aws just ignores it
 
 # see if build system is smart enough to only import individual objects from
-# a library when i do 'import {foo} from bar', or does it import the entire library?
+# a library when i do 'import {foo} from bar', or does it import the entire library? => seems that it imports
+# the entire library if it is a normal dependency, even if you aren't using
+# it at all (and even if you are using it, but only importing specific htings)
+# so importing {foo, bar} from baz is just a way of minimizing namespace
+# collisions, but has no impact on bundle size
