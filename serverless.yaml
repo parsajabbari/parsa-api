@@ -1,13 +1,15 @@
 service: parsa-api
 frameworkVersion: 3.33.0
 configValidationMode: error
+package:
+  individually: false
 
 provider:
   name: aws
   architecture: arm64
   memorySize: 128
   runtime: nodejs18.x
-  stage: local
+  stage: main
   region: us-east-1
 
 plugins:
@@ -27,6 +29,8 @@ functions:
     #       inputPathsMap:
     #         event: "$"
     #       inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
+  function2:
+    handler: foo.handler
 
 custom:
   serverless-offline:
@@ -64,3 +68,14 @@ custom:
 # it at all (and even if you are using it, but only importing specific htings)
 # so importing {foo, bar} from baz is just a way of minimizing namespace
 # collisions, but has no impact on bundle size
+
+# by default, serverless makes one zip file
+# for your entire codebase. all handlers will be in it.
+# you can make set package.individually = true at the service level
+# to force serverless to make individual zip files
+# for each function, but this makes deploy take longer
+# AND, most importantly, by default, if you don't then
+# specify any package patterns at the function level
+# the entire package is included anyway. so package individually
+# with no package patterns just makes 1000 identical zip files
+
