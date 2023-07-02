@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent, ScheduledEvent } from "aws-lambda";
 
-module.exports.handler = async (
+export const handler = async (
   event: APIGatewayProxyEvent | ScheduledEvent,
   context: any
 ) => {
