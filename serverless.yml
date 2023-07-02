@@ -16,16 +16,16 @@ plugins:
 functions:
   function1:
     handler: index.handler
-    events:
-      - httpApi:
-          path: /
-          method: get
-      - schedule:
-          rate: rate(1 minute)
-          inputTransformer: # doesn't work on serverless offline, just gets ignored and you get the stock event instead
-            inputPathsMap:
-              event: "$"
-            inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
+    # events:
+    #   - httpApi:
+    #       path: /
+    #       method: get
+    # - schedule:
+    #     rate: rate(1 minute)
+    #     inputTransformer: # doesn't work on serverless offline, just gets ignored and you get the stock event instead
+    #       inputPathsMap:
+    #         event: "$"
+    #       inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
 
 custom:
   serverless-offline:
@@ -50,3 +50,6 @@ custom:
 # figure out whether specifying engines in package with a specific version of node causes
 # aws to use the same version or not? will it just error out during build?
 # if it works anyway but diffrent version logged out, rpoves that aws just ignores it
+
+# see if the build system is smart enough to leave out "dev" dependencies in rpoduction build if i
+# have them listed as regular dependencies
