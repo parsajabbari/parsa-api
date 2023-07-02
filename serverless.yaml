@@ -52,5 +52,5 @@ custom:
 # aws to use the same version or not? will it just error out during build?
 # if it works anyway but diffrent version logged out, rpoves that aws just ignores it
 
-# see if the build system is smart enough to leave out "dev" dependencies in rpoduction build if i
-# have them listed as regular dependencies
+# see if build system is smart enough to only import individual objects from
+# a library when i do 'import {foo} from bar', or does it import the entire library?
