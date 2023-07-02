@@ -40,10 +40,19 @@ custom:
   serverless-offline:
     lambdaPort: 3002
     httpPort: 3003
-# research stack drift... how do i turn serverless.yml into a state function?
-# every time i deploy, auto delete any resource that is not part of the stack
-# in this file? i.e. if i delete a function from here, it should auto delete
-# it from the cloud
+# cloudwatch's stack drift detection tool is a good way to check if you have
+# manually modified thigns like cron expressions since the last deploy, instaed
+# of manually comparing serverless file with AWS portal.
+
+# confirmed that if you delete a resource in serverless, then deploy, it will
+# delete it in aws as well! so stack drift can only happen when you manually
+# change a config like a cron expression. this also means that if you change
+# the name of your service entirely, like form karma-api to foobar-api, the
+# stack drift tool won't save you; because you are creating a new stack entirely
+#, not modifying an existing service. if you change the name of your service,
+# must delete the old stack manually. but once you have a service and are just
+# modifying it, serverless is indeed a state function, and the stack drift tool
+# will just show you if you changed anything from the state.
 
 # AWS default is not necessarily same as serverless default! so you can't just look
 # at what AWS says and just assume that if i don't mess with it, that's what i will
