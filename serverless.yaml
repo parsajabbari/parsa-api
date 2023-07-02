@@ -51,6 +51,12 @@ custom:
 # figure out whether specifying engines in package with a specific version of node causes
 # aws to use the same version or not? will it just error out during build?
 # if it works anyway but diffrent version logged out, rpoves that aws just ignores it
+# => what's happening is that it is either you or your build system (e.g. github actions)
+# that actually uses the package.json to install dependencies so uses the engine version.
+# all aws is receiving is a bundled zip file, and while there is a package.json
+# in there, AWS isn't touching it. it is just receiving a bundle and then
+# running it its own runtime. AWS doesn't do any additional validation on your
+# package.json at that point.
 
 # see if build system is smart enough to only import individual objects from
 # a library when i do 'import {foo} from bar', or does it import the entire library? => seems that it imports
