@@ -21,7 +21,7 @@ functions:
     handler: index.handler
     events:
       - httpApi:
-          path: /
+          path: /index
           method: get
       - schedule:
           rate: rate(1 minute)
@@ -31,6 +31,10 @@ functions:
             inputTemplate: '{"default": <event>, "_karmaArgs": {"priority": 1}}'
   function2:
     handler: foo.handler
+    events:
+      - httpApi:
+          path: /foo
+          method: get
 
 custom:
   serverless-offline:
