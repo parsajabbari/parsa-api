@@ -5,9 +5,9 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.119",
-    "nodemon": "2.0.22",
-    "prettier": "2.8.8",
-    "prettier-plugin-packagejson": "2.4.3",
+    "nodemon": "3.0.1",
+    "prettier": "3.0.0",
+    "prettier-plugin-packagejson": "2.4.5",
     "serverless": "3.33.0",
     "serverless-offline": "12.0.4",
     "serverless-plugin-typescript": "2.1.5",
