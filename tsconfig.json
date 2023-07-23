@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "preserveConstEnums": true,
     "sourceMap": true,
-    "target": "es5",
+    "target": "es2022",
     "outDir": ".build", // serverless-plugin-typescript will use .build regardless of what you put here. This option is just here so you don't try to change it and then scratch your head why your choice is being ignored.
     "moduleResolution": "node",
-    "lib": ["es2015"],
     "rootDir": "./", // serverless-plugin-typescript will use ./ regardless of what you put here. This option is just here so you don't try to change it and then scratch your head why your choice is being ignored.
     "strict": true,
     "allowUnreachableCode": false, // Even though I have 'strict' above, VSCode for some dumb reason still relies on the underlying rules to be enumerated for it to show as Problems in the workspace. Strangely, some rules like noImplicitAny still show up in Problems without being enumerated, not sure what's wrong with this one
