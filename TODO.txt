@@ -15,3 +15,8 @@ I thought it would be the root of the repo... is there a way to make sure that r
 is repo root and not file system root? => this is probably the point of the @ convention
 
 see if i can do tailwind.config.ts (typescript)
+
+
+
+Run Tailwind on-demand:
+npx tailwindcss -i src/main.css -o dist/output.css --watch 
