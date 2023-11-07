@@ -14,6 +14,4 @@ Why is it that 'href="/dist/output.css"' looks at the root of the file system?
 I thought it would be the root of the repo... is there a way to make sure that root
 is repo root and not file system root? => this is probably the point of the @ convention
 
-Do I still need prettier.config.js for the prettier tailwind plugin?
-
 see if i can do tailwind.config.ts (typescript)
