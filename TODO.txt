@@ -1,0 +1,19 @@
+Figure out how to make a self-contained workspace that has all extensions
+and VS Code config built-in... just clone and everything should just work. Also
+useful for working across new/different devices. Key is that it should work for
+anyone given access... shouldn't be only available to my account.
+
+1. Tailwind CSS Intellisense extension to be auto-installed
+2. Add tailwindcss as file association for .css files so that VSCode doesn't
+complain about unknown rules like @tailwind, @apply
+"files.associations": {
+  "*.css": "tailwindcss"
+}
+
+Why is it that 'href="/dist/output.css"' looks at the root of the file system?
+I thought it would be the root of the repo... is there a way to make sure that root
+is repo root and not file system root? => this is probably the point of the @ convention
+
+Do I still need prettier.config.js for the prettier tailwind plugin?
+
+see if i can do tailwind.config.ts (typescript)
