@@ -8,7 +8,7 @@ provider:
   name: aws
   architecture: arm64
   memorySize: 128
-  runtime: nodejs18.x
+  runtime: nodejs20.x
   stage: main
   region: us-east-1
 
