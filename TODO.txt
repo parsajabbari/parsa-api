@@ -10,6 +10,8 @@ complain about unknown rules like @tailwind, @apply
   "*.css": "tailwindcss"
 }
 
+3. When using tailwind with vue/vite... use the vite-specific setup guide and use postcss and autoprefixer
+
 Why is it that 'href="/dist/output.css"' looks at the root of the file system?
 I thought it would be the root of the repo... is there a way to make sure that root
 is repo root and not file system root? => this is probably the point of the @ convention
