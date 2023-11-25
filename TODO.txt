@@ -18,6 +18,9 @@ is repo root and not file system root? => this is probably the point of the @ co
 
 see if i can do tailwind.config.ts (typescript)
 
+figure out if i use the same tailwind group name like group/parent in different vue files
+will they collide? or does vue automatically compile them to different unique runtime names?
+
 
 
 Run Tailwind on-demand:

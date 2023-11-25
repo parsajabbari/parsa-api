@@ -4,6 +4,15 @@
     <link rel="stylesheet" href="../dist/output.css" />
   </head>
   <body>
-    <h1 class="m-5 mt-8 text-ellipsis bg-clip-text text-blue-600">foobar</h1>
+    <div class="group/grand bg-green-400 p-5">
+      <div class="group/parent bg-yellow-500 p-5">
+        <h1 class="group-hover/parent:bg-pink-500">hello</h1>
+        <h1
+          class="group-hover/parent:translate-x-1 group-hover/grand:bg-blue-500"
+        >
+          world
+        </h1>
+      </div>
+    </div>
   </body>
 </html>
