@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "nodemon --ext '*' --exec 'serverless offline'",
-    "zsh": "zsh -ic"
+    "zsh": "zsh -ic",
+    "openai": "node --env-file=.env src/openai.ts"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.126",
