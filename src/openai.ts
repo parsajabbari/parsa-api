@@ -1,7 +1,6 @@
 import OpenAI from "openai";
 
-const handler = async () => {
-  console.log("handler");
+export const handler = async () => {
   const openai = new OpenAI();
 
   const completion = await openai.chat.completions.create({
@@ -20,7 +19,5 @@ const handler = async () => {
     model: "gpt-3.5-turbo",
   });
 
-  console.log(completion.choices[0]);
+  return completion;
 };
-
-handler();

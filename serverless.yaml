@@ -8,9 +8,12 @@ provider:
   name: aws
   architecture: arm64
   memorySize: 128
+  timeout: 60
   runtime: nodejs20.x
   stage: main
   region: us-east-1
+  environment:
+    OPENAI_API_KEY: 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
 
 plugins:
   - serverless-plugin-typescript
@@ -34,6 +37,12 @@ functions:
     events:
       - httpApi:
           path: /foo
+          method: get
+  function3:
+    handler: src/openai.handler
+    events:
+      - httpApi:
+          path: /openai
           method: get
 
 custom:
