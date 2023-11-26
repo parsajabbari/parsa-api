@@ -25,3 +25,8 @@ will they collide? or does vue automatically compile them to different unique ru
 
 Run Tailwind on-demand:
 npx tailwindcss -i src/main.css -o dist/output.css --watch 
+
+compile project on demand:
+npx tsc
+
+now that node 20.6 has built-in support for .env files, how can i use it with nodemon so i don't have to use dotenv package anymore?
