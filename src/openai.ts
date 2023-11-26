@@ -1,8 +1,9 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI();
+const handler = async () => {
+  console.log("handler");
+  const openai = new OpenAI();
 
-async function main() {
   const completion = await openai.chat.completions.create({
     messages: [
       {
@@ -20,6 +21,6 @@ async function main() {
   });
 
   console.log(completion.choices[0]);
-}
+};
 
-main();
+handler();
