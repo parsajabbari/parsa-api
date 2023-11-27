@@ -4,7 +4,6 @@ frameworkVersion: 3.38.0
 configValidationMode: error
 package:
   individually: false
-
 provider:
   name: aws
   architecture: arm64
