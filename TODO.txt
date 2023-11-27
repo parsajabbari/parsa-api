@@ -29,4 +29,7 @@ npx tailwindcss -i src/main.css -o dist/output.css --watch
 compile project on demand:
 npx tsc
 
+tell aws which profile to use:
+aws sso login --profile parsa-local
+
 now that node 20.6 has built-in support for .env files, how can i use it with nodemon so i don't have to use dotenv package anymore?
