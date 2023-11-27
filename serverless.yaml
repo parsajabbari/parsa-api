@@ -1,4 +1,5 @@
 service: parsa-api
+useDotenv: true
 frameworkVersion: 3.38.0
 configValidationMode: error
 package:
@@ -13,7 +14,7 @@ provider:
   stage: main
   region: us-east-1
   environment:
-    OPENAI_API_KEY: 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
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
 
 plugins:
   - serverless-plugin-typescript
